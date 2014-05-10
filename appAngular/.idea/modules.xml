@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/appAngular.iml" filepath="$PROJECT_DIR$/appAngular.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../appBackbone/appBackbone.iml" filepath="$PROJECT_DIR$/../appBackbone/appBackbone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../appBackend/crudUsers/crudUsers.iml" filepath="$PROJECT_DIR$/../appBackend/crudUsers/crudUsers.iml" />
+    </modules>
+  </component>
+</project>
+

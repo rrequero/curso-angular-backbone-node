@@ -1,0 +1,73 @@
+
+<div class="jumbotron">
+
+    <h2>Listado de usuarios</h2>
+    <a class="btn btn-primary" ui-sref="create">Create user</a>
+    <table  class="table table-responsive table-hover table-striped">
+        <thead>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Created date</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users" ng-click="selectedUser(user)" ng-dblclick="detailUser(user)" ng-class="{success: userSelected.username == user.username}">
+                <td>{{user.username}}</td>
+                <td>{{getCompleteName(user)}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.createdAt | date: 'dd/MM/yyyy HH:mm'}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary" ng-click="editUser(user)">Edit</button>
+                    <button type="button" class="btn btn-danger" ng-click="deleteUser(user)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="jumbotron" ng-show="userSelected">
+    <h3>Detail user: {{userSelected.username}}</h3>
+    <div class="column">
+        <div>Complete name: {{getCompleteName(userSelected)}}</div>
+        <div>Email: {{userSelected.email}}</div>
+        <div>Created date: {{userSelected.createdAt | date: 'dd/MM/yyyy HH:mm'}}</div>
+        <div>Password: {{userSelected.password}}</div>
+    </div>
+    <div class="column">
+        <div gravatar="userSelected.gravatar" size="'150'"></div>
+    </div>
+</div>
+
+
+<script type="text/ng-template" id="detail.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Detail user: {{userSelected.username}}</h3>
+    </div>
+    <div class="modal-body">
+        <div class="column">
+            <div><span class="bold">Complete name:</span> {{getCompleteName(userSelected)}}</div>
+            <div><span class="bold">Email:</span> {{userSelected.email}}</div>
+            <div><span class="bold">Created date:</span> {{userSelected.createdAt | date: 'dd/MM/yyyy HH:mm'}}</div>
+            <div><span class="bold">Password:</span> {{userSelected.password}}</div>
+        </div>
+        <div class="image">
+            <div gravatar="userSelected.gravatar" size="'150'"></div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="close()">Close</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="confirm.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Confirm delete user</h3>
+    </div>
+    <div class="modal-body">
+        <p>Are you sure you want to delete the User {{user.username}}?</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" ng-click="accept()">Yes</button>
+        <button class="btn btn-primary" ng-click="close()">No</button>
+    </div>
+</script>

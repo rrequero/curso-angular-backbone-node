@@ -1,0 +1,19 @@
+.column{
+    display:inline-table;
+    width: 370px;
+    vertical-align: top;
+
+}
+
+.image{
+    display:inline-table;
+    width: 180px;
+}
+
+span.bold{
+    font-weight: bold;
+}
+
+input.ng-invalid{
+    border:1px solid #a94442;
+}
