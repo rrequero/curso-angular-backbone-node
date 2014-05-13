@@ -1,0 +1,4 @@
+Backbone:
+
+gravatar,
+modal con el detalle

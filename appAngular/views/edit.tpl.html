@@ -1,57 +1,58 @@
 
 <div class="jumbotron">
 
-    <h2 ng-show="user._id">Edición de usuario</h2>
-    <h2 ng-show="!user._id">Creación de usuario</h2>
+    <h2 ng-show="user._id">Edit user</h2>
+    <h2 ng-show="!user._id">Create user</h2>
 
     <form class="form-horizontal" role="form" name="userForm" ng-submit="userForm.$valid && saveUser()" novalidate="">
-        <div class="form-group">
+        <div class="form-group" ng-class="{'has-error':userForm.username.$invalid}">
             <label for="username" class="col-sm-2 control-label">Username</label>
             <div class="col-sm-5">
                 <input type="text" ng-model="user.username" name="username" class="form-control" id="username" placeholder="Username" required ng-disabled="user._id">
-            </div>
-            <div class="col-sm-5 text-danger" ng-show="userForm.username.$invalid" >
-               <span ng-show="userForm.username.$error.required">Required field</span>
+                <div class="help-block" ng-show="userForm.username.$invalid" >
+                    <span ng-show="userForm.username.$error.required">Required field</span>
+                </div>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="{'has-error':userForm.email.$invalid}">
             <label for="email" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-5">
                 <input type="email" ng-model="user.email" name="email" class="form-control" id="email" placeholder="Email" required>
+                <div class="help-block" ng-show="userForm.email.$invalid" >
+                    <span ng-show="userForm.email.$error.required">Required field</span>
+                    <span ng-show="userForm.email.$error.email">Invalid email</span>
+                </div>
             </div>
-            <div class="col-sm-5 text-danger" ng-show="userForm.email.$invalid" >
-                <span ng-show="userForm.email.$error.required">Required field</span>
-                <span ng-show="userForm.email.$error.email">Invalid email</span>
-            </div>
+
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="{'has-error':userForm.password.$invalid}">
             <label for="password" class="col-sm-2 control-label">Password</label>
             <div class="col-sm-5">
                 <input type="password" ng-model="user.password" name="password" class="form-control" id="password" placeholder="Password" required ng-minlength="5">
-            </div>
-            <div class="col-sm-5 text-danger" ng-show="userForm.password.$invalid" >
-                <span ng-show="userForm.password.$error.required">Required field</span>
-                <span ng-show="userForm.password.$error.minlength">The field must contain at least 5 characters</span>
+                <div class="help-block" ng-show="userForm.password.$invalid" >
+                    <span ng-show="userForm.password.$error.required">Required field</span>
+                    <span ng-show="userForm.password.$error.minlength">The field must contain at least 5 characters</span>
+                </div>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="{'has-error':userForm.repeatpassword.$invalid}">
             <label for="repeatpassword" class="col-sm-2 control-label">Repeat password</label>
             <div class="col-sm-5">
                 <input type="password" ng-model="user.repeatpassword" name="repeatpassword" class="form-control" id="repeatpassword"
-                       placeholder="Repeat password" ui-validate=" '$value==user.password' " ui-validate-watch=" 'user.password' ">
-            </div>
-            <div class="col-sm-5 text-danger" ng-show="userForm.repeatpassword.$invalid" >
-                <span ng-show="userForm.repeatpassword.$error.required">Required field</span>
-                <span ng-show="userForm.repeatpassword.$error.validator">Repeat password should be equal to password</span>
+                          placeholder="Repeat password" ui-validate=" '$value==user.password' " ui-validate-watch=" 'user.password' ">
+                <div class="help-block" ng-show="userForm.repeatpassword.$invalid" >
+                    <span ng-show="userForm.repeatpassword.$error.required">Required field</span>
+                    <span ng-show="userForm.repeatpassword.$error.validator">Repeat password should be equal to password</span>
+                </div>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="{'has-error':userForm.name.$invalid}">
             <label for="name" class="col-sm-2 control-label">Name</label>
             <div class="col-sm-5">
                 <input type="text" ng-model="user.name" name="name" class="form-control" id="name" placeholder="Name" required>
-            </div>
-            <div class="col-sm-5 text-danger" ng-show="userForm.name.$invalid" >
-                <span ng-show="userForm.name.$error.required">Required field</span>
+                <div class="help-block" ng-show="userForm.name.$invalid" >
+                    <span ng-show="userForm.name.$error.required">Required field</span>
+                </div>
             </div>
         </div>
         <div class="form-group">

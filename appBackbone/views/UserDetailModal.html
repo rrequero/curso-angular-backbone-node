@@ -1,0 +1,23 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Detail user: <%= username %></h3>
+        </div>
+        <div class="modal-body">
+            <div class="column">
+                <div><span class="bold">Complete name:</span> <%=name + " " + surname %></div>
+                <div><span class="bold">Email:</span> <%=email %></div>
+                <div><span class="bold">Created date:</span> <%=createdAt %></div>
+                <div><span class="bold">Password:</span> <%=password %></div>
+            </div>
+            <div class="image">
+                <div >
+                    <img src="https://s.gravatar.com/avatar/<%=gravatar %>?s=150'/>" />
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" id="closeDetail">Close</button>
+        </div>
+    </div>
+</div>

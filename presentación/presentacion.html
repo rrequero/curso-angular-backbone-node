@@ -15,11 +15,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+        <link rel="stylesheet" href="css/main.css">
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
 			if( window.location.search.match( /print-pdf/gi ) ) {
@@ -79,7 +80,7 @@
 						<h2>¿Que necesitamos?</h2>
 						<ul>
 							<li>NodeJs:  <a href="http://nodejs.org/">http://nodejs.org/</a></li>
-							<li>MongoDB: <a href="https://www.mongodb.org/downloads">https://www.mongodb.org/downloads  </a></li>
+							<li>MongoDB: <a href="https://www.mongodb.org/downloads">https://www.mongodb.org/downloads</a></li>
 							<li>AngularJS y BackboneJS</li>
 							<li>GIT <a href="http://git-scm.com/">http://git-scm.com/</a></li>
 							<li>Editor de texto: Notepad++, Sublime Text, Eclipse, ...</li>							
@@ -90,7 +91,7 @@
 
 				<section data-state="nodejs">
 					<h2>NodeJS</h2>
-					<p><img id="logo" src="/img/logoNodeJS.svg" alt="node.js"></p>
+					<p><img id="logo" class="contrast" src="/img/logoNodeJS.svg" alt="node.js"></p>
 					<ul>
 						<li>Programa de servidor</li>
 						<li>Motor V8 JavaScript escrito por Google</li>
@@ -125,7 +126,7 @@
 				</section>
 				<section data-state="mongodb">
 					<h2>MongoDB</h2>
-					<p><img id="logo" src="/img/logo-mongodb.png" alt="mongodb"></p>
+					<p><img class="contrast" src="/img/logo-mongodb.png" alt="mongodb"></p>
 					<ul>
 						<li>NoSQL</li>
 						<li>Orientado a documentos</li>						
@@ -153,7 +154,56 @@
 						Este le vamos a utilizar para obtener, guardar, etc nuestros usuarios.
 					</aside>
 				</section>
-				
+
+                <section data-state="angularjs">
+                    <h2>Angularjs</h2>
+                    <p>
+                        <a href="https://angularjs.org/">https://angularjs.org</a>
+                        <p><img src="/img/angularjsLogo.png" alt="angularjs"></p>
+                    </p>
+
+                    <ul>
+                        <li>Creado por Google</li>
+                        <li>MVC</li>
+                        <li>Data binding</li>
+                        <li>Inyección de dependencias</li>
+                        <li>Documentación</li>
+                        <li>No tiene dependencias</li>
+                        <li>OpenSource</li>
+                    </ul>
+                    <aside class="notes">
+                        Caracteristicas principales: Separar el html del codigo javascript, no manipular el dom desde el javascript,
+                        inyeccion de dependencias, etc
+                    </aside>
+                </section>
+                <section data-state="backbone">
+                    <h2>Backbone.js</h2>
+                    <p>
+                        <a href="http://backbonejs.org/">http://backbonejs.org</a>
+                        <p><img src="/img/backbone.png" alt="backbonejs"></p>
+                    </p>
+
+                    <ul>
+                        <li>Creado por Jeremy Ashkenas (creador de CoffeScript)</li>
+                        <li>MVC</li>
+                        <li>Dependencias:JQuery, underscore</li>
+                        <li></li>
+                        <li>OpenSource</li>
+                    </ul>
+                    <aside class="notes">
+                        Caracteristicas principales: Separar el html del codigo javascript, no manipular el dom desde el javascript,
+                        inyeccion de dependencias, etc
+                    </aside>
+                </section>
+                <section data-state="use">
+                    <h2>Actualmente</h2>
+                    <p>Comparación de crecimiento</p>
+                    <img src="img/comparacionCrecimiento.png"/>
+                    <aside class="notes">
+                        Caracteristicas principales: Separar el html del codigo javascript, no manipular el dom desde el javascript,
+                        inyeccion de dependencias, etc
+                    </aside>
+                </section>
 
 				<section>
 					<h2>Pretty Code</h2>
@@ -195,8 +245,8 @@ function linkify( selector ) {
 				history: true,
 				center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				theme: 'beige', // available themes are in /css/theme
+				transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',

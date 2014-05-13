@@ -1,7 +1,7 @@
 <div class="jumbotron">
 
-    <h2 id="editTitle">Edición de usuario</h2>
-    <h2 id="createTitle">Creación de usuario</h2>
+    <h2 id="editTitle">Edit user</h2>
+    <h2 id="createTitle">Create user</h2>
 
     <form class="form-horizontal" role="form" name="userForm">
         <div class="form-group">
@@ -51,6 +51,12 @@
             <label for="gravatar" class="col-sm-2 control-label">Gravatar</label>
             <div class="col-sm-5">
                 <input type="text" name="gravatar" class="form-control" id="gravatar" placeholder="Gravatar" value="<%= gravatar %>">
+
+            </div>
+            <div class="col-sm-5">
+                <div >
+                    <img src="https://s.gravatar.com/avatar/<%=gravatar %>?s=150'/>" />
+                </div>
             </div>
         </div>
 

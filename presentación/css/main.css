@@ -1,0 +1,8 @@
+img{
+    padding:10px !important;
+    border: none !important;
+}
+
+img.contrast{
+    background: #000 !important;
+}

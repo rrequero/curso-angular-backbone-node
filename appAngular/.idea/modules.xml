@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/appAngular.iml" filepath="$PROJECT_DIR$/appAngular.iml" />
       <module fileurl="file://$PROJECT_DIR$/../appBackbone/appBackbone.iml" filepath="$PROJECT_DIR$/../appBackbone/appBackbone.iml" />
       <module fileurl="file://$PROJECT_DIR$/../appBackend/crudUsers/crudUsers.iml" filepath="$PROJECT_DIR$/../appBackend/crudUsers/crudUsers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../presentación/presentación.iml" filepath="$PROJECT_DIR$/../presentación/presentación.iml" />
     </modules>
   </component>
 </project>

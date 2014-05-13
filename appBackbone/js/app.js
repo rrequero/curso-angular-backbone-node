@@ -44,15 +44,24 @@ Users = Backbone.Collection.extend({
 	model: User
 });
 
+window.UserDetailModal = Backbone.Modal.extend({
+	//template: _.template($('#modal-template').html()),
+	cancelEl: '#closeDetail'
+
+});
+
 window.UserListItemView = Backbone.View.extend({
 
 	tagName:"tr",
 	events:{
-		'click .deleteButton': 'deleteUser'
+		'click .deleteButton': 'deleteUser',
+		'click [data-toggle="modal"]': 'openModal'
 	},
-	initialize:function () {
+	modal:null,
+	initialize:function (options) {
 		this.model.bind("change", this.render, this);
 		this.model.bind("destroy", this.close, this);
+
 	},
 
 	render:function (eventName) {
@@ -60,15 +69,19 @@ window.UserListItemView = Backbone.View.extend({
 		return this;
 	},
 	deleteUser : function(event){
-
 		this.model.destroy();
+	},
+	openModal: function(){
+		var modalView = new UserDetailModal({model:this.model});
+		//modalView.template = modalView.template(this.model.toJSON());
+		$('#modal').html(modalView.render().el);
 	}
 });
 
 window.UserListView = Backbone.View.extend({
 	tagName: 'div',
 	className: '',
-
+	modal:null,
 	initialize: function(){
 		this.model.on("sync",this.render, this);
 		this.model.on("destroy",this.render, this);
@@ -85,6 +98,8 @@ window.UserListView = Backbone.View.extend({
 
 	render:function (eventName) {
 		$(this.el).html(this.template());
+
+		_self = this;
 		_.each(this.model.models, function (user) {
 			$(this.el).find("tbody").append(new UserListItemView({model:user}).render().el);
 		}, this);
@@ -99,7 +114,9 @@ window.UserEditView = Backbone.View.extend({
 	initialize: function(){
 		if(this.model) {
 			this.model.on("sync", this.render, this);
+			this.model.on("change", this.render, this);
 		}
+
 		Backbone.Validation.bind(this);
 	},
 	events:{
@@ -183,7 +200,7 @@ var AppRouter = Backbone.Router.extend({
 			this.user = this.userList.where({username:username});
 		}
 
-		var view = new UserEditView(this.user && this.user.length>0 ? {model: this.user[0]}: {model: new User()});
+		var view = new UserEditView(this.user && this.user.length>0 && username ? {model: this.user[0]}: {model: new User()});
 
 		$("#principal").html(view.render().el);
 	}
@@ -208,7 +225,7 @@ _.extend(Backbone.Validation.callbacks, {
 	}
 });
 
-utils.loadTemplate(['UserListView', 'UserListItemView', 'UserEditView'], function() {
+utils.loadTemplate(['UserListView', 'UserListItemView', 'UserEditView', 'UserDetailModal'], function() {
 	window.app = new AppRouter();
 	Backbone.history.start();
 
