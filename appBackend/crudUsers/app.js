@@ -1,11 +1,11 @@
 var express = require('express');
-var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var app = express();
 
 var mongoose = require('mongoose');
 var ObjectId = require('mongoose').Types.ObjectId;
+
 var allowCrossDomain = function(req, res, next) {
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Headers", "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept");
@@ -156,14 +156,14 @@ var onDbReady = function(err){
 	app.use("/", router);
 
 	app.set('port', process.env.PORT || 3000);
-
+	//arrancamos el servidor
 	var server = app.listen(app.get('port'), function() {
 	 console.log('Express server listening on port ' + server.address().port);
 	});
 
 }
 
-
+//conectamos a la bbdd
 mongoose.connect('mongodb://127.0.0.1:27017/crudUsers', onDbReady);
 
 
