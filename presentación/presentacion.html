@@ -448,15 +448,93 @@ var server = app.listen(app.get('port'), function() {
                     <h1>AngularJS</h1>
                     <h3>Conceptos básicos</h3>
                     <ul>
-                        <li>
-                            Controllers
-                        </li>
+                        <li>Scopes</li>
+                        <li>Controllers</li>
                         <li>Modules</li>
-                        <li>Services</li>
+                        <li>Filters</li>
                         <li>Directive</li>
+                        <li>Services</li>
                     </ul>
                     <aside class="notes">
 
+                    </aside>
+                </section>
+                <section>
+                    <h1>AngularJS</h1>
+                    <h3>Scopes</h3>
+                    <p>Los <strong>scopes</strong> son los distintos contextos de ejecución</p>
+                    <p>Guardan la información</p>
+                    <aside class="notes">
+                        cuando referenciamos un atributo del modelo mediante la directive ng-model, no estamos sino apuntando a un atributo que contiene el scope sobre el que se está trabajando.
+                        <br>En los scopes se guarda la información de los modelos que se representan en la vista y también atributos que se utilizan para manejar la lógica de la misma.
+                    </aside>
+                </section>
+                <section>
+                    <h1>AngularJS</h1>
+                    <h3>Controllers</h3>
+                    <p>Son los elementos principales de angularJS</p>
+                    <p>Manejan toda la información del scope</p>
+                    <p>Demo</p>
+                    <aside class="notes">
+                        Los controllers son los encargados de inicializar y modificar la información que contienen los scopes en función de las necesidades de la aplicación.
+                        <br>
+                        Hablar aqui de Client-side template  y el data-binding
+                    </aside>
+                </section>
+                <section>
+                    <h1>AngularJS</h1>
+                    <h3>Modules</h3>
+                    <p>Namespace: Organizan el código</p>
+                    <p>Declaración de dependencias</p>
+                    <p>Demo</p>
+                    <aside class="notes">
+                        El modulo nos permite declarar dependencias y su nombre. Sirve para no declarar en el espacio de nombres global y <br>
+                        poder reutilizar
+                    </aside>
+                </section>
+                <section>
+                    <h1>AngularJS</h1>
+                    <h3>Filters</h3>
+                    <p>Modificadores</p>
+                    <p>Demo</p>
+                    <aside class="notes">
+
+                    </aside>
+                </section>
+                <section>
+                    <h1>AngularJS</h1>
+                    <h3>Directives</h3>
+                    <p>Atributos, Elementos, Comentarios o Clases CSS</p>
+                    <p>Asocia una funcionalidad a la directiva</p>
+                    <p>Demo</p>
+                    <aside class="notes">
+                        Mediante el uso de las mismas podemos extender la sintaxis de HTML y darle el comportamiento que deseemos
+                    </aside>
+                </section>
+                <section>
+                    <h1>AngularJS</h1>
+                    <h3>Services</h3>
+                    <p>Tres grupos: Services, Factories y Providers</p>
+                    <p>Organización y reutilización de código</p>
+                    <p>Demo</p>
+                    <aside class="notes">
+                        <ul>
+                            <li>service: Cuando se inyecta se devuelve una instancia de la función<br>
+                            En un service no se pueden inyectar otros elementos</li>
+                            <li>factory: Cuando se inyecta se devuelve el valor resultado de la ejecución de la función</li>
+                            <li>provider: Cuando se inyecta se devuelve la funcion pasada en el $get</li>
+
+                        </ul>
+                        <p>Los providers tienen una ventaja que es que se pueden configurar durante la etapa de config de angular
+                        (tienes acceso a las funciones que no estan dentro del $get</p>
+                    </aside>
+                </section>
+                <section>
+                    <h1>AngularJS</h1>
+                    <h3>CRUD de usuarios</h3>
+
+                    <aside class="notes">
+                        Descargar el codigo de la demo
                     </aside>
                 </section>
                 <section>
