@@ -211,11 +211,12 @@
                 <section data-state="use">
                     <h2>Actualmente</h2>
                     <p>Comparación de uso</p>
-                    <img src="img/comparacionCrecimi.png"/>
+                    <img src="img/comparacionBusquedas.PNG"/>
                     <aside class="notes">
 
                     </aside>
                 </section>
+
                 <section>
                     <h1>Demo</h1>
                     <h3>Angularjs: <a href="http://angular.curso.local/#/">demo</a></h3>
@@ -474,7 +475,7 @@ var server = app.listen(app.get('port'), function() {
                     <h3>Controllers</h3>
                     <p>Son los elementos principales de angularJS</p>
                     <p>Manejan toda la información del scope</p>
-                    <p>Demo</p>
+
                     <aside class="notes">
                         Los controllers son los encargados de inicializar y modificar la información que contienen los scopes en función de las necesidades de la aplicación.
                         <br>
@@ -486,7 +487,7 @@ var server = app.listen(app.get('port'), function() {
                     <h3>Modules</h3>
                     <p>Namespace: Organizan el código</p>
                     <p>Declaración de dependencias</p>
-                    <p>Demo</p>
+
                     <aside class="notes">
                         El modulo nos permite declarar dependencias y su nombre. Sirve para no declarar en el espacio de nombres global y <br>
                         poder reutilizar
@@ -496,7 +497,7 @@ var server = app.listen(app.get('port'), function() {
                     <h1>AngularJS</h1>
                     <h3>Filters</h3>
                     <p>Modificadores</p>
-                    <p>Demo</p>
+
                     <aside class="notes">
 
                     </aside>
@@ -516,7 +517,7 @@ var server = app.listen(app.get('port'), function() {
                     <h3>Services</h3>
                     <p>Tres grupos: Services, Factories y Providers</p>
                     <p>Organización y reutilización de código</p>
-                    <p>Demo</p>
+
                     <aside class="notes">
                         <ul>
                             <li>service: Cuando se inyecta se devuelve una instancia de la función<br>
@@ -541,12 +542,79 @@ var server = app.listen(app.get('port'), function() {
                     <h1>Backbone</h1>
                     <h3>Conceptos básicos</h3>
                     <ul>
-                        <li>Model</li>
-                        <li>Collection</li>
-                        <li>View</li>
+                        <li>Events</li>
+                        <li>Models</li>
+                        <li>Collections</li>
+                        <li>Route</li>
                     </ul>
                     <aside class="notes">
+                        Ejemplo de tutorial http://alfonsomarin.com/desarrollo-web/tutoriales/backbonejs-ii-modelos
+                    </aside>
+                </section>
+                <section>
+                    <h1>Backbone</h1>
+                    <h3>Events</h3>
+                    <p>Acontecimientos internos que ocurren en la aplicación</p>
+                    <p>Se pueden recoger en cualquier parte de la aplicación</p>
+                    <p>Ejemplo: Se modifico un modelo, se elimino un modelo de la colección,etc</p>
+                    <aside class="notes">
+                        Ejemplo de tutorial
+                    </aside>
+                </section>
+                <section>
+                    <h1>Backbone</h1>
+                    <h3>Models</h3>
+                    <p>Son contenedores de datos</p>
+                    <p>Tienen metodos para tratar los datos (CRUD) </p>
+                    <p>Lanza eventos cada vez que ocurre algo en el modelo (</p>
 
+                    <aside class="notes">
+                        Los Modelos como en cualquier arquitectura MVC se encargan de controlar los datos de
+                        <br>la vista que esta viendo el usuario en ese momento, manejan lógica de negocio a nivel de manipulación de datos
+                        <br>y también se usan generalmente para capturar los eventos que se generan y para producirlos.
+                    </aside>
+                </section>
+                <section>
+                    <h1>Backbone</h1>
+                    <h3>Collections</h3>
+                    <p>Conjunto de modelos</p>
+                    <p>Tienen metodos para tratar los datos (CRUD), ordenar y buscar  </p>
+                    <p>Generan eventos cada vez que se agrega o elimina un modelo y tambien genera los eventos de los modelos</p>
+
+                    <aside class="notes">
+                        Cuando un modelo lanza un evento por ejemplo de change:attribute la collecion asociada a el tambien
+                        lanza ese evento y se podria capturaar
+                    </aside>
+                </section>
+                <section>
+                    <h1>Backbone</h1>
+                    <h3>Views</h3>
+                    <p>Controladores</p>
+                    <p>Orquestan todo lo que pasa en una "pantalla" </p>
+                    <p>Manejan el diseño de la interfaz HTML (renderizado normalmente con underscore)</p>
+
+                    <aside class="notes">
+                        Son las que manejan el diseño de la interfaz HTML y se enlazan a los modelos para mostrar sus datos,<br>
+                        las vistas permiten realizar una abstracción de los datos para que puedan ser manipulados por el usuario <br>
+                        y también crear plantillas para ser reutilizadas en diferentes paginas.
+                    </aside>
+                </section>
+                <section>
+                    <h1>Backbone</h1>
+                    <h3>Route</h3>
+                    <p>Encargados de redirigir a cada una de las vistas</p>
+
+
+                    <aside class="notes">
+
+                    </aside>
+                </section>
+                <section>
+                    <h1>BackboneJS</h1>
+                    <h3>CRUD de usuarios</h3>
+
+                    <aside class="notes">
+                        Descargar el codigo de la demo
                     </aside>
                 </section>
 			</div>
